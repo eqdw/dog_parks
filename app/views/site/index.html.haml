@@ -1,6 +1,19 @@
 .jumbotron
-  %h1 Acton Dog Park
-  %p.lead Check in and let everyone know that you're down at the dog park!
+  %h1.bright Acton Dog Park
   = form_tag(check_in_path) do
-    = text_field_tag 'name'
-    = submit_tag "Check In!"
+    = text_field_tag 'name', nil, :class => (@error ? "error" : "")
+    = submit_tag "Check In!",     :class => "btn btn-lg btn-success"
+
+.row.marketing
+  .col-lg-6
+    - if @recent_checkins.any?
+      %h4 These dogs are currently at the dog park:
+      %ul
+        - @recent_checkins.each do |checkin|
+          %li
+            %em=checkin.name
+            was there
+            %strong== #{time_ago_in_words(checkin.created_at)} ago
+
+    - else
+      %h4 There are no dogs at the dog park :(

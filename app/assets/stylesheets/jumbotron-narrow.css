@@ -45,7 +45,14 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background: url('/assets/dog_park.jpg');
+  background-position-y: -28px;
 }
+
+.jumbotron h1.bright{
+  color: #EEE;
+}
+
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
