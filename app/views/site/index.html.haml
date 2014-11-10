@@ -1,0 +1,6 @@
+.jumbotron
+  %h1 Acton Dog Park
+  %p.lead Check in and let everyone know that you're down at the dog park!
+  = form_tag(check_in_path) do
+    = text_field_tag 'name'
+    = submit_tag "Check In!"
