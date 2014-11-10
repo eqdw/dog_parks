@@ -37,5 +37,6 @@ group :production do
 end
 
 gem 'haml'
+gem 'bootstrap-sass'
 
 ruby "2.1.4"
