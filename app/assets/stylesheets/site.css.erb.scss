@@ -1,0 +1,12 @@
+.jumbotron { 
+  background: url('<%= asset_path("dog_park.jpg") %> ');
+  background-position-y: -28px;
+}
+.jumbotron input{
+  display: block;
+  margin: 12px auto;
+}
+.jumbotron h1.bright{
+  margin-bottom: 40px;
+  color: #EEE;
+}
