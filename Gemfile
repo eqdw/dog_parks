@@ -39,5 +39,6 @@ end
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'mailcatcher'
 
 ruby "2.1.4"
