@@ -38,5 +38,6 @@ end
 
 gem 'haml'
 gem 'bootstrap-sass'
+gem 'devise'
 
 ruby "2.1.4"
