@@ -14,4 +14,6 @@
     .container
       .header
         = render :partial => "shared/nav"
+        %p.notice= notice
+        %p.alert=  alert
       = yield
