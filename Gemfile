@@ -29,6 +29,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'mailcatcher'
 end
 
 group :production do
@@ -39,6 +40,5 @@ end
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'mailcatcher'
 
 ruby "2.1.4"
