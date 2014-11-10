@@ -1,4 +1,10 @@
 %ul.nav.nav-pills.pull-right{:role => 'tablist'}
   %li{:role => "presentation", :class => (current_page?(index_path) ? "active" : "")}
     = link_to "Home", index_path
+  - if user_logged_in?
+    %li{:role => "presentation"} Log Out
+  - else
+    %li{:role => "presentation"} Sign Up
+    %li{:role => "presentation"} Log In
+
 %h3.text-muted Acton Dog Park

@@ -1,8 +1,8 @@
 .jumbotron
   %h1.bright Acton Dog Park
-  = form_tag(check_in_path) do
-    = text_field_tag 'name', nil, :class => (@error ? "error" : "")
-    = submit_tag "Check In!",     :class => "btn btn-lg btn-success"
+  - if user_signed_in?
+    = form_tag(check_in_path) do
+      = submit_tag "Check In!",     :class => "btn btn-lg btn-success"
 
 .row.marketing
   .col-lg-6
