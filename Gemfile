@@ -30,7 +30,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'pg'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+
 gem 'haml'
 
 # Use ActiveModel has_secure_password
