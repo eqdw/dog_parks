@@ -4,4 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
+
+
+  has_many :dogs
+
+
+  def dog_names
+    dogs.map(&:name).join(", ")
+  end
 end

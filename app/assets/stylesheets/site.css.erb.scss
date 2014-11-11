@@ -1,3 +1,7 @@
+.jumbotron.oreo{
+  height: 640px;
+  width: 427px;
+
 .jumbotron { 
   background: url('<%= asset_path("dog_park.jpg") %> ');
   background-position-y: -28px;

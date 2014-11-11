@@ -1,0 +1,20 @@
+.row.marketing
+  .col-lg-6
+    - if @dogs.any?
+      %h4 These are your dogs
+      %ul
+      - @dogs.each do |dog|
+        %li
+          %span= dog.name
+          = link_to "", remove_dog_path(dog), :class => 'glyphicon glyphicon-remove', :method => :delete
+    - else 
+      %h4 You haven't added any dogs
+
+    %hr
+
+    %h4 Add a dog?
+    = form_tag(add_dog_path) do
+      .form-group{:class => (@error ? "has-error" : "")}
+        = text_field_tag 'name', nil, :class => 'form-control'
+      = submit_tag "Add Dog", :class => "btn"
+
