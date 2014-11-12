@@ -10,7 +10,7 @@ Incidentally, if you're unaware: this is using Square Cash. After sending this e
 Also, feel free to delete this message body, and replace it with a friendly "Hello!". Or just say hi the next time we're down at the dog park. 
     EMAIL
 
-    mailto = "mailto:#{email}?cc=#{cc}&body=#{body}"
+    mailto = "mailto:#{email}?cc=#{cc}&body=#{URI.encode(body)}"
 
     link_to text, mailto
   end
