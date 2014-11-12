@@ -1,8 +1,7 @@
-= image_tag(asset_path("oreo-small.jpg"))
-
+.oreo
 
 .row.marketing
-  .col-lg-6
+  .col-lg-12
 
     %p Hey there!
     %p 
@@ -30,4 +29,15 @@
       and are able, please consider donating to the site. It
       only costs a few bucks a month to run, but I've spent a
       good amount of time on it already. For only a dollar, you
-      too can give Oreo a delicious treat
+      too can give Oreo a delicious treat. You can either
+      = donate_link("click here")
+      or use the button at the top. I use
+      = link_to "Square Cash", "https://square.com/cash"
+      to process donations, and so clicking that link will let you
+      email me money. How cool is that! All you need to do is put a
+      dollar amount in the subject line (like "$1") and Square
+      does the rest
+    %p
+      Note for Android phones: There's a known bug in the Android email
+      client that causes the donate link to put garbage in the message
+      body. That's fine. It won't break anything.

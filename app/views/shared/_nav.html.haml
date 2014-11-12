@@ -13,5 +13,7 @@
       = link_to "Sign Up", new_user_registration_path
     %li{:role => "presentation", :class => (current_page?(new_user_session_path) ? "active" : "")}
       = link_to "Log In", new_user_session_path
+  %li.donate{:role => "presentation"}
+    = donate_link
 
 %h3.text-muted Acton Dog Park
