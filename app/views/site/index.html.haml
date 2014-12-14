@@ -11,7 +11,8 @@
       %ul
         - @recent_checkins.each do |checkin|
           %li
-            %em=checkin.name
+            %em
+              = link_to checkin.name, dog_path(checkin.dog_id)
             was there
             %strong== #{time_ago_in_words(checkin.created_at)} ago
 

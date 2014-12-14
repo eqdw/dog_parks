@@ -1,0 +1,10 @@
+.row.marketing
+  .col-lg-6
+    %h4 These dogs hang out at the dog park
+    %h5 Click a dog's name to see when they like to be at the park
+    %ul
+      - @dogs.each do |dog|
+        %li
+          = link_to dog.name, dog_path(dog)
+
+

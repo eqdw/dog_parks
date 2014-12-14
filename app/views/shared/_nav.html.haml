@@ -4,6 +4,8 @@
   %li{:role => "presentation", :class => (current_page?(about_path) ? "active" : "")}
     = link_to "About", about_path
   - if user_signed_in?
+    %li{:role => "presentation", :class => (current_page?(dogs_path) ? "active" : "")}
+      = link_to "Dogs", dogs_path
     %li{:role => "presentation", :class => (current_page?(profile_path) ? "active" : "")}
       = link_to "Profile", profile_path
     %li{:role => "presentation"}

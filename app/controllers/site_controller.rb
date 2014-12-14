@@ -10,7 +10,7 @@ class SiteController < ApplicationController
 
   def check_in
     @user.dogs.each do |dog|
-      CheckIn.create(:name => dog.name)
+      CheckIn.create(:dog => dog)
     end
 
     redirect_to :index

@@ -28,6 +28,7 @@ group :doc do
 end
 
 group :development do
+  gem 'pry'
   gem 'sqlite3'
   gem 'mailcatcher'
 end

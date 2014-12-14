@@ -1,0 +1,7 @@
+.row.marketing
+  .col-lg-6
+    %h4 #{@dog.name} likes to go to the dog park at these times:
+    %ul
+      - @check_ins.each do |ci|
+        %li=ci.created_at.in_time_zone("America/Los_Angeles").to_s(:short)
+
