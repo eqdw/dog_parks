@@ -53,7 +53,7 @@ class SiteController < ApplicationController
   end
 
   def set_dogs
-    @dogs = current_user.dogs
+    @dogs = current_user.try(:dogs) || []
   end
 
   def set_user
