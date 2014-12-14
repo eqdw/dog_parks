@@ -2,7 +2,14 @@
   %h1.bright Acton Dog Park
   - if user_signed_in?
     = form_tag(check_in_path) do
-      = submit_tag "Check In!",     :class => "btn btn-lg btn-success"
+      #dog-list
+        %ul
+          - @dogs.each do |dog|
+            - html_id = "dog-#{dog.id}"
+            %li
+              %input{:id => html_id, :name => "dog_ids[]", :type => "checkbox", :checked => true, :value => dog.id}
+              %label{:for => html_id}= dog.name
+      = submit_tag "Check In!", :class => "btn btn-lg btn-success"
 
 .row.marketing
   .col-lg-6

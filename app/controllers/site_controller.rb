@@ -1,16 +1,19 @@
 class SiteController < ApplicationController
 
   before_action :set_user
-  before_action :set_recent_checkins, :only => [:index, :check_in]
-  before_action :authenticate_user!,  :only => [:profile, :update_profile]
+  before_action :set_dogs,            :only => [ :index, :profile          ]
+  before_action :set_recent_checkins, :only => [ :index, :check_in         ]
+  before_action :authenticate_user!,  :only => [ :profile, :update_profile ]
 
 
   def index
   end
 
   def check_in
-    @user.dogs.each do |dog|
-      CheckIn.create(:dog => dog)
+    dog_ids = params[:dog_ids].map(&:to_i)
+    dogs = only_owners_dogs(@user, dog_ids)
+    dogs.each do |dog_id|
+      CheckIn.create(:dog_id => dog_id)
     end
 
     redirect_to :index
@@ -20,7 +23,6 @@ class SiteController < ApplicationController
   end
 
   def profile
-    @dogs = @user.dogs
   end
 
   def add_dog
@@ -37,13 +39,22 @@ class SiteController < ApplicationController
 
   def remove_dog
     dog = Dog.find(params[:id])
-
     dog.destroy
 
     redirect_to :profile
   end
 
   private
+
+  def only_owners_dogs(user, dog_ids)
+    all_dog_ids = user.dogs.map(&:id)
+
+    dog_ids.select{|id| all_dog_ids.include?(id.to_i)}
+  end
+
+  def set_dogs
+    @dogs = current_user.dogs
+  end
 
   def set_user
     @user = current_user
