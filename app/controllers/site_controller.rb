@@ -44,6 +44,9 @@ class SiteController < ApplicationController
     redirect_to :profile
   end
 
+  def qr_codes
+  end
+
   private
 
   def only_owners_dogs(user, dog_ids)
