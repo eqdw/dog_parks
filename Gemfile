@@ -41,6 +41,5 @@ end
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'omniauth-facebook'
 
 ruby "2.1.4"
