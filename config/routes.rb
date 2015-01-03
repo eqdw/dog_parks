@@ -9,6 +9,8 @@ DogParks::Application.routes.draw do
   post   '/add_dog',        :to => "site#add_dog",    :as => "add_dog"
   delete '/remove_dog/:id', :to => "site#remove_dog", :as => "remove_dog"
 
+  get    '/codes',          :to => "site#qr_codes",   :as => "codes"
+
   resources :dogs, :only => [:index, :show]
 
   root :to => "site#index"

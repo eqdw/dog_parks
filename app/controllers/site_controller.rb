@@ -1,8 +1,8 @@
 class SiteController < ApplicationController
 
   before_action :set_user
-  before_action :set_dogs,            :only => [ :index, :profile          ]
-  before_action :set_recent_checkins, :only => [ :index, :check_in         ]
+  before_action :set_dogs,            :only => [ :index,   :profile        ]
+  before_action :set_recent_checkins, :only => [ :index,   :check_in       ]
   before_action :authenticate_user!,  :only => [ :profile, :update_profile ]
 
 
@@ -42,6 +42,9 @@ class SiteController < ApplicationController
     dog.destroy
 
     redirect_to :profile
+  end
+
+  def qr_codes
   end
 
   private
