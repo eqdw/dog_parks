@@ -1,3 +1,10 @@
+# Needed so devise can generate the right urls
+# Without this, it will miss the www and that
+# doesn't play well with heroku
+DogParks::Application.configure do
+  config.hostname = "www.actondogpark.net" 
+end
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
